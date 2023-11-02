@@ -1,6 +1,6 @@
 import express from 'express';
 import connect from './schemas/index.js';
-import storerouter from './routes/products.router.js';
+import userrouter from './routes/user_router.js';
 
 
 const app = express();
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     return res.json({message : 'hii'});
 })
 
-app.use('/api', [router, storerouter]);
+app.use('/', [router, userrouter]);
 
 app.listen(PORT, () => {
     console.log(PORT, "번으로 서버가 열렸습니다.");
